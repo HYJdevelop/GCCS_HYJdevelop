@@ -236,7 +236,7 @@ export default function App() {
       <header className="mb-7 flex flex-wrap items-center justify-between gap-4">
         <a href="#top" className="flex items-center gap-3 no-underline" aria-label="回到首頁">
           <span className="grid h-12 w-12 place-items-center rounded-xl bg-forest text-white shadow-sm"><svg aria-hidden="true" width="27" height="27" viewBox="0 0 32 32" fill="none"><path d="M5 25.5V7l11 12L27 7v18.5M5 7h5m12 0h5M5 25.5h5m12 0h5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /><circle cx="16" cy="19" r="2.3" fill="#e9bd57" /></svg></span>
-          <span><span className="block text-[11px] font-bold uppercase tracking-[.16em] text-leaf">{state.profile.university} · {state.profile.department}</span><span className="mt-0.5 block font-display text-lg font-semibold leading-tight">HYJ_GCCS <span className="font-sans text-sm font-medium text-slate-500">畢業學分計算系統</span></span></span>
+          <span><span className="block text-[11px] font-bold uppercase tracking-[.16em] text-leaf">{state.profile.university} · {state.profile.department}</span><span className="mt-0.5 block font-display text-lg font-semibold leading-tight">HYJ_GCCS</span></span>
         </a>
         <div className="flex items-center gap-2 sm:gap-3">
           <button type="button" onClick={() => setRequirementsOpen(true)} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-line bg-white px-3 text-sm font-semibold text-ink transition hover:border-leaf"><SlidersHorizontal className="h-4 w-4 text-leaf" /><span>設定畢業規定</span></button>
@@ -319,7 +319,7 @@ export default function App() {
       <RequirementsDialog open={requirementsOpen} profile={state.profile} onClose={() => setRequirementsOpen(false)} onSave={saveProfile} />
       <CourseDialog open={courseDialogOpen} course={editingCourse} onClose={() => setCourseDialogOpen(false)} onSave={saveCourse} onDelete={deleteCourse} />
       <AccountDialog open={accountOpen} user={user} configured={firebaseConfigured} error={authError} onClose={() => setAccountOpen(false)} onGoogle={handleGoogleSignIn} onEmail={handleEmailSignIn} onResetPassword={handlePasswordReset} onSignOut={handleSignOut} />
-      <footer className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-xs text-slate-500"><span>HYJ_GCCS · 畢業學分計算系統</span><a href="https://www.hyjdevelop.com" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 font-semibold text-ink transition hover:text-leaf"><img src="https://www.hyjdevelop.com/logo.png" alt="HYJdevelop" loading="lazy" className="h-6 w-6 rounded-full object-cover" />由 HYJdevelop.com 製作<ArrowUpRight className="h-3.5 w-3.5" /></a></footer>
+      <footer className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-xs text-slate-500"><span>HYJ_GCCS</span><a href="https://www.hyjdevelop.com" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 font-semibold text-ink transition hover:text-leaf"><img src="https://www.hyjdevelop.com/logo.png" alt="HYJdevelop" loading="lazy" className="h-6 w-6 rounded-full object-cover" />由 HYJdevelop.com 製作<ArrowUpRight className="h-3.5 w-3.5" /></a></footer>
     </div>
   );
 }
