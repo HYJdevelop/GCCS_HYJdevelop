@@ -83,7 +83,12 @@ export default function App() {
   useEffect(() => {
     let active = true;
     let unsubscribe: () => void = () => {};
-    const hasFirebaseConfig = Boolean(import.meta.env.VITE_FIREBASE_API_KEY && import.meta.env.VITE_FIREBASE_PROJECT_ID && import.meta.env.VITE_FIREBASE_APP_ID);
+    const hasFirebaseConfig = Boolean(
+      import.meta.env.VITE_FIREBASE_API_KEY &&
+      import.meta.env.VITE_FIREBASE_AUTH_DOMAIN &&
+      import.meta.env.VITE_FIREBASE_PROJECT_ID &&
+      import.meta.env.VITE_FIREBASE_APP_ID
+    );
     if (!hasFirebaseConfig) return;
     void import('./firebase').then(api => {
       if (!active) return;

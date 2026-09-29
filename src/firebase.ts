@@ -22,7 +22,21 @@ const firebaseConfig = {
 };
 
 export function createFirebaseServices(): FirebaseServices | null {
-  if (!firebaseConfig.apiKey || !firebaseConfig.projectId || !firebaseConfig.appId || firebaseConfig.apiKey.startsWith('YOUR_')) return null;
+  const requiredValues = [
+    firebaseConfig.apiKey,
+    firebaseConfig.authDomain,
+    firebaseConfig.projectId,
+    firebaseConfig.appId,
+  ];
+
+  const hasRequiredConfig = requiredValues.every(value => {
+    if (typeof value !== 'string') return false;
+    const trimmedValue = value.trim();
+    return trimmedValue.length > 0 && !trimmedValue.startsWith('YOUR_') && !trimmedValue.includes('example');
+  });
+
+  if (!hasRequiredConfig) return null;
+
   const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
   return { auth: getAuth(app), db: getFirestore(app) };
 }
