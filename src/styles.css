@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+body { @apply m-0 bg-paper text-ink; background-image: radial-gradient(#d6e0eb 0.75px, transparent 0.75px); background-size: 18px 18px; }
+button, input, select { font: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #e9bd57; outline-offset: 2px; }
+.shell { max-width: 1440px; margin: 0 auto; padding: 22px 30px 48px; }
+.panel { border: 1px solid #dbe3ed; background: rgba(255,255,255,.94); box-shadow: 0 8px 24px rgba(23,36,57,.04); }
+.field { @apply h-10 w-full rounded-lg border border-line bg-white px-3 text-sm; }
+.button-primary { @apply inline-flex min-h-10 items-center justify-center rounded-lg bg-forest px-4 text-sm font-semibold text-white hover:bg-[#163952]; }
+.button-secondary { @apply inline-flex min-h-10 items-center justify-center rounded-lg border border-line px-4 text-sm font-semibold hover:bg-slate-50; }
+.check-row { @apply flex cursor-pointer items-start gap-2 text-xs leading-relaxed text-slate-600; }
+.check-row input, .check-card input { @apply mt-0.5 h-4 w-4 shrink-0 accent-forest; }
+.check-card { @apply flex cursor-pointer items-center gap-3 rounded-lg border border-line px-3 py-3; }
+.course-row { transition: background-color .18s ease, transform .18s ease; }
+.course-row:hover { background-color: #f3f7fa; }
+.meter-fill { transition: width .45s cubic-bezier(.2,.75,.3,1); }
+.modal-backdrop { background: rgba(18,35,28,.56); backdrop-filter: blur(3px); }
+.soft-scroll { scrollbar-color: #bdcbbf transparent; scrollbar-width: thin; }
+@media (max-width: 760px) { .shell { padding: 14px 14px 34px; } .course-scroll { max-height: none; } .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
